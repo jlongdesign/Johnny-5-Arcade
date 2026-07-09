@@ -1,0 +1,301 @@
+// ==================================================
+// WORK WITH ME PAGE
+// ==================================================
+@use 'variables';
+
+// ── Hero ───────────────────────────────────────────
+.wwm-hero {
+    background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.9) 0%,
+        rgba(0, 20, 30, 0.85) 100%
+    );
+    border-bottom: 2px solid variables.$neon-cyan;
+    padding-top: 5rem !important;
+    padding-bottom: 4rem !important;
+}
+
+.wwm-hero-badge {
+    display: inline-block;
+    padding: 6px 18px;
+    border: 1px solid variables.$neon-cyan;
+    border-radius: 999px;
+    background: rgba(0, 255, 255, 0.08);
+
+    .badge-text {
+        color: variables.$neon-cyan;
+        font-size: 0.8rem;
+        font-weight: bold;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+    }
+}
+
+.wwm-hero-title {
+    font-size: clamp(2.2rem, 6vw, 4rem);
+    font-weight: 900;
+    color: #fff;
+    text-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+    line-height: 1.15;
+}
+
+.wwm-hero-subtitle {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 680px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+// ── Section shared ─────────────────────────────────
+.wwm-section {
+    background: variables.$bg-primary;
+}
+
+.wwm-section-alt {
+    background: variables.$bg-secondary;
+}
+
+.wwm-section-title {
+    font-size: clamp(1.6rem, 4vw, 2.4rem);
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+
+.wwm-title-line {
+    height: 3px;
+    width: 60px;
+    margin: 0 auto;
+    border-radius: 2px;
+    background: variables.$neon-cyan;
+
+    &--yellow  { background: variables.$neon-yellow; }
+    &--magenta { background: variables.$neon-magenta; }
+    &--green   { background: variables.$neon-green; }
+    &--cyan    { background: variables.$neon-cyan; }
+}
+
+// ── About ──────────────────────────────────────────
+.wwm-about-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.wwm-niche-chip {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: 14px 10px;
+    border: 1px solid rgba(0, 255, 255, 0.3);
+    border-radius: 10px;
+    background: rgba(0, 255, 255, 0.06);
+    transition: border-color 0.25s, background 0.25s;
+
+    &:hover {
+        border-color: variables.$neon-cyan;
+        background: rgba(0, 255, 255, 0.12);
+    }
+
+    .wwm-niche-icon {
+        font-size: 1.6rem;
+    }
+
+    .wwm-niche-label {
+        font-size: 0.78rem;
+        font-weight: bold;
+        color: variables.$neon-cyan;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+}
+
+// ── Audience ───────────────────────────────────────
+.wwm-platform-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    &:hover {
+        transform: translateY(-4px);
+    }
+}
+
+.wwm-platform-icon {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.wwm-platform-name {
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+}
+
+.wwm-platform-stat {
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+.wwm-stat-box {
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.wwm-stat-number {
+    font-size: 1.6rem;
+    font-weight: 900;
+    line-height: 1.2;
+    margin-bottom: 4px;
+}
+
+.wwm-stat-label {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.wwm-demo-note {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.75);
+    padding: 14px 20px;
+    border: 1px dashed rgba(255, 255, 0, 0.3);
+    border-radius: 8px;
+    background: rgba(255, 255, 0, 0.04);
+}
+
+// ── Partnership Opportunity Cards ──────────────────
+.wwm-opportunity-card {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+    &:hover {
+        transform: translateY(-5px);
+    }
+}
+
+.wwm-opp-icon {
+    font-size: 2.5rem;
+    margin-bottom: 12px;
+    display: block;
+}
+
+.wwm-opp-title {
+    font-size: 1.15rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.wwm-opp-desc {
+    font-size: 0.92rem;
+    line-height: 1.65;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 0;
+}
+
+// ── Partners placeholder ───────────────────────────
+.wwm-partners-placeholder {
+    border: 1px solid rgba(255, 255, 0, 0.25);
+    background: rgba(255, 255, 0, 0.03);
+}
+
+.wwm-partners-insert {
+    .wwm-partners-icon {
+        font-size: 4rem;
+        opacity: 0.9;
+    }
+}
+
+// ── Media Kit ─────────────────────────────────────
+.wwm-kit-desc {
+    font-size: 1rem;
+    max-width: 560px;
+    margin: 0 auto 1.5rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.wwm-kit-btn {
+    font-size: 1.05rem;
+    padding: 14px 36px;
+    letter-spacing: 1.5px;
+}
+
+.wwm-kit-note {
+    font-size: 0.88rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+// ── Contact ────────────────────────────────────────
+.wwm-contact-item {
+    .wwm-contact-label {
+        font-size: 0.8rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 4px;
+    }
+
+    .wwm-contact-value {
+        font-size: 0.95rem;
+        word-break: break-word;
+
+        &:hover {
+            color: variables.$neon-cyan !important;
+        }
+    }
+}
+
+.wwm-contact-form {
+    select.form-control {
+        background: variables.$bg-tertiary;
+        color: variables.$text-primary;
+        cursor: pointer;
+
+        option {
+            background: variables.$bg-tertiary;
+            color: variables.$text-primary;
+        }
+    }
+}
+
+.wwm-submit-btn {
+    font-size: 1rem;
+    padding: 12px 36px;
+    letter-spacing: 1.5px;
+    min-width: 220px;
+}
+
+.wwm-alert {
+    border-radius: 6px;
+    font-weight: bold;
+
+    &--success {
+        background: rgba(0, 255, 0, 0.1);
+        border: 1px solid variables.$neon-green;
+        color: variables.$neon-green;
+    }
+
+    &--error {
+        background: rgba(255, 0, 0, 0.1);
+        border: 1px solid variables.$neon-red;
+        color: variables.$neon-red;
+    }
+}
+
+// ── glass-neon-green variant (missing from glass-effects) ──
+.glass-card.glass-neon-green::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    box-shadow: inset 0 0 0 1px rgba(0, 255, 0, 0.9);
+    opacity: 0.9;
+}

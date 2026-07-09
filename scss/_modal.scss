@@ -1,0 +1,66 @@
+// ==================================================
+// MODAL COMPONENT
+// ==================================================
+@use 'variables';
+
+/* Game Emulator Modal */
+.game-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: variables.$z-modal;
+    backdrop-filter: blur(5px);
+}
+
+.game-modal.active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-modal-content {
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    padding: 20px;
+    max-width: 95vw;
+    max-height: 95vh;
+    position: relative;
+}
+
+.close-modal {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: variables.$bg-secondary;
+    border: 2px solid variables.$text-primary;
+    color: variables.$text-primary;
+    font-size: 1.5rem;
+    cursor: pointer;
+    font-weight: bold;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: variables.$z-modal;
+    transition: all variables.$animation-fast;
+}
+
+.close-modal:hover {
+    background: variables.$btn-retro-bg;
+    transform: scale(1.1);
+}
+
+.game-frame {
+    width: 800px;
+    height: 600px;
+    max-width: 100%;
+    max-height: 80vh;
+    border: none;
+}

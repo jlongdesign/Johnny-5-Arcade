@@ -1,0 +1,55 @@
+// Glow Variables (edit once, reuse everywhere)
+$glow-color: #00ffff;
+$glow-size: 40px;
+$glow-opacity: 0.7;
+
+.glow-bg {
+  position: relative;
+  z-index: 0;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: -20%;
+    background: radial-gradient(
+      circle,
+      rgba($glow-color, $glow-opacity) 0%,
+      rgba($glow-color, 0.4) 40%,
+      rgba($glow-color, 0.15) 60%,
+      transparent 80%
+    );
+    filter: blur($glow-size);
+    z-index: -1;
+    pointer-events: none;
+  }
+}
+
+.glow-plasma {
+  position: relative;
+  z-index: 0;
+  overflow: visible;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 140%;
+    height: 140%;
+    top: -20%;
+    left: -10%;
+    z-index: -1;
+    pointer-events: none;
+
+    background:
+      radial-gradient(
+        60% 50% at 35% 40%,
+        rgba(255, 255, 255, 0.95) 0%,
+        rgba(0, 255, 255, 0.9) 20%,
+        rgba(0, 150, 255, 0.8) 45%,
+        rgba(120, 0, 255, 0.6) 70%,
+        transparent 90%
+      );
+
+    filter: blur(70px);
+    transform: rotate(-8deg);
+  }
+}

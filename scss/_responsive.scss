@@ -1,0 +1,82 @@
+// ==================================================
+// RESPONSIVE DESIGN
+// ==================================================
+@use 'variables';
+
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .site-title {
+        font-size: 1.25rem;
+        letter-spacing: 1px;
+    }
+    
+    .nav-menu {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .nav-menu li {
+        border-right: none;
+        border-bottom: 1px solid variables.$neon-green;
+    }
+    
+    .filter-row {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .review-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    /* Retro TV Mobile Styles */
+    .retro-tv-container {
+        max-width: 100%;
+        padding: 10px;
+    }
+    
+    .retro-tv {
+        padding: 25px 20px 40px 20px;
+    }
+    
+    .tv-controls {
+        position: static;
+        flex-direction: row;
+        justify-content: center;
+        margin-top: 15px;
+        transform: none;
+    }
+    
+    .tv-knob {
+        width: 30px;
+        height: 30px;
+    }
+    
+    .retro-tv-brand {
+        bottom: 15px;
+        left: 20px;
+        font-size: 0.7rem;
+    }
+    
+    .tv-screen {
+        height: 300px;
+    }
+    
+    .game-modal .retro-tv .tv-screen {
+        width: 95vw;
+        height: 60vh;
+    }
+    
+    .tv-fullscreen-btn {
+        top: 5px;
+        right: 5px;
+        padding: 6px 10px;
+        font-size: 0.7rem;
+    }
+}

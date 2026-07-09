@@ -1,0 +1,156 @@
+// ==================================================
+// GAMING NEWS STYLES
+// ==================================================
+@use 'variables';
+@use 'sass:color';  // Import Sass color module for color functions
+
+// Custom badges (can't be replicated with Bootstrap)
+.breaking-news-badge-position {
+  position: absolute; 
+  top: 25px; 
+  right: 25px; 
+  display: flex; 
+  gap: 5px; 
+  z-index: 2;
+}
+
+.breaking-news-badge {
+  background: linear-gradient(45deg, variables.$red, #ff4444) !important;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px !important;
+  font-size: 0.6rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  animation: pulse-red 2s infinite;
+}
+
+.featured-article-badge {
+  background: linear-gradient(45deg, variables.$yellow, variables.$orange) !important;
+  color: #000 !important;
+  padding: 8px 16px !important;
+  border-radius: 20px !important;
+  font-size: 0.6rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+// Custom text colors (Bootstrap doesn't have these specific retro colors)
+.text-cyan { color: variables.$cyan !important; }
+.text-orange { color: variables.$orange !important; }
+.text-magenta { color: variables.$magenta !important; }
+
+// Article content styling
+.content-wrapper {
+  background: linear-gradient(135deg, #1a1a2a, #2a2a3a);
+  color: #ccc;
+  border: 2px solid rgba(variables.$cyan, 0.3);
+}
+
+// Video container glow effect
+.video-container {
+  box-shadow: 0 5px 20px rgba(variables.$magenta, 0.2);
+}
+
+// Gallery interactions (Bootstrap can't handle complex hover states)
+.gallery-item {
+  border: 2px solid variables.$yellow;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: scale(1.02);
+    border-color: variables.$orange;
+    
+    .gallery-overlay {
+      opacity: 1 !important;
+      background: rgba(0, 0, 0, 0.5);
+    }
+    
+    img {
+      transform: scale(1.05);
+    }
+  }
+
+  &:focus {
+    outline: 2px solid variables.$cyan;
+    outline-offset: 2px;
+  }
+  
+  img {
+    transition: transform 0.3s ease;
+  }
+}
+
+.gallery-overlay {
+  transition: opacity 0.3s ease;
+}
+
+// Custom category and tag styling
+.category-link {
+  background-color: rgba(variables.$cyan, 0.2) !important;
+  color: variables.$cyan !important;
+  border: 1px solid variables.$cyan;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: variables.$cyan !important;
+    color: #000 !important;
+    text-decoration: none !important;
+  }
+}
+
+.tag-badge {
+  background: rgba(variables.$orange, 0.2) !important;
+  color: variables.$orange !important;
+  border: 1px solid variables.$orange;
+}
+
+// Related articles card styling
+.related-article-card {
+  background: linear-gradient(135deg, #1a1a2a, #2a2a3a) !important;
+  border: 2px solid variables.$magenta !important;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(variables.$magenta, 0.3);
+    
+    .card-img-top {
+      transform: scale(1.05) !important;
+    }
+  }
+
+  .text-magenta {
+    color: variables.$magenta !important;
+    transition: color 0.3s ease;
+    &:hover {
+      color: color.adjust(variables.$magenta, $lightness: 20%) !important;
+    }
+  }
+}
+
+// Pulse animation (Bootstrap doesn't have this)
+@keyframes pulse-red {
+  0%, 100% { 
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% { 
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+// Mobile responsiveness for custom elements
+@media (max-width: 768px) {
+  .breaking-news-badge,
+  .featured-article-badge {
+    font-size: 0.7rem !important;
+    padding: 6px 12px !important;
+  }
+  
+  .gallery-item {
+    border-width: 1px;
+  }
+}

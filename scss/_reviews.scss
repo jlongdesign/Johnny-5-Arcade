@@ -1,0 +1,38 @@
+// ==================================================
+// REVIEWS COMPONENT
+// ==================================================
+@use 'variables';
+
+.review-card {
+}
+
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.review-game-title {
+    color: variables.$neon-yellow;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.review-rating {
+    display: flex;
+    gap: 5px;
+}
+
+.star {
+    color: variables.$neon-orange;
+    font-size: 1.2rem;
+}
+
+.review-content {
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.review-meta {
+}

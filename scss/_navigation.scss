@@ -1,0 +1,57 @@
+// ==================================================
+// NAVIGATION COMPONENT
+// ==================================================
+@use 'variables';
+
+.main-navigation {
+    // background: variables.$bg-tertiary;
+    // padding: 10px;
+    // border-top: 2px solid variables.$neon-green;
+    // border-bottom: 2px solid variables.$neon-green;
+    // box-shadow: variables.$glow-green;
+}
+
+.navbar-dark {
+    .navbar-nav {
+        .nav-link {
+            margin: 0 15px;
+            color: variables.$text-primary;
+            &:hover {
+                color: variables.$neon-cyan;
+            }
+        }
+    }
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.nav-menu li {
+    border-right: 1px solid variables.$neon-green;
+}
+
+.nav-menu li:last-child {
+    border-right: none;
+}
+
+.nav-menu a {
+    display: block;
+    padding: 15px 25px;
+    color: variables.$neon-green;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: all variables.$animation-fast;
+    border: none;
+}
+
+.nav-menu a:hover {
+    background: variables.$neon-green;
+    color: variables.$text-dark;
+    box-shadow: inset 0 0 10px variables.$glow-green;
+}

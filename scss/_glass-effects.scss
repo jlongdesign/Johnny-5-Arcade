@@ -1,0 +1,94 @@
+@use 'variables';
+
+/* 1️⃣ Base Glass Effect (no hover) */
+.glass {
+  position: relative;
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.18);
+  overflow: hidden;
+  transition: none; /* no hover effects */
+}
+
+.glass-border {
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.glass-border-top {
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+}
+.glass-border-bottom {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+}
+.glass-border-left {
+  border-left: 1px solid rgba(255, 255, 255, 0.25);
+}
+.glass-border-right {
+  border-right: 1px solid rgba(255, 255, 255, 0.25); 
+}
+
+/* Optional neon on base glass (static) */
+.glass::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  filter: blur(12px);
+  opacity: 0.3; /* subtle */
+  box-shadow: 0 0 15px rgba(0, 200, 255, 0.35);
+}
+
+/* 2️⃣ Card Glass with Hover Effects */
+.glass-card {
+  @extend .glass; /* base glass styles */
+
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.glass-card:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 16px 40px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+/* Neon variants for interactive cards */
+.glass-card.glass-neon-blue::before,
+.glass-card.glass-neon-green::before,
+.glass-card.glass-neon-amber::before,
+.glass-card.glass-neon-red::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0.9;
+}
+
+.glass-card.glass-neon-blue::before {
+  box-shadow: inset 0 0 0 1px rgba(0, 200, 255, 0.9);
+}
+.glass-card.glass-neon-blue::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  filter: blur(14px);
+  opacity: 0.45;
+  box-shadow: 0 0 18px rgba(0, 200, 255, 0.85),
+              0 0 36px rgba(0, 200, 255, 0.45);
+}
+
+.glass-dark {
+  position: relative;
+  background: variables.$glass-dark-bg;
+  box-shadow:
+    0 12px 36px variables.$glass-dark-shadow,
+    inset 0 1px 0 variables.$glass-dark-highlight;
+
+  color: rgba(255, 255, 255, 0.9);
+  overflow: hidden;
+}

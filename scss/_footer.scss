@@ -1,0 +1,23 @@
+// ==================================================
+// FOOTER COMPONENT
+// ==================================================
+@use 'variables';
+
+.site-footer {
+    background: variables.$bg-header;
+    border-top: 3px solid variables.$neon-green;
+    padding: 40px 0 20px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-text {
+    color: variables.$neon-green;
+    margin-bottom: 20px;
+}

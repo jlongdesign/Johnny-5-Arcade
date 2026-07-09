@@ -1,0 +1,37 @@
+// === CRT Overlay Effects ===
+@use '../mixins' as *;
+@use '../variables' as vars;
+
+.crt::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+
+  @include crt-scanlines;
+  mix-blend-mode: overlay;
+}
+
+.crt::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      ellipse at center,
+      rgba(255, 255, 255, 0.15) 0%,
+      rgba(0, 0, 0, vars.$crt-vignette-strength) 70%
+    ),
+    linear-gradient(
+      to right,
+      rgba(255, 0, 0, 0.04),
+      rgba(0, 255, 0, 0.04),
+      rgba(0, 0, 255, 0.04)
+    );
+
+  mix-blend-mode: soft-light;
+}

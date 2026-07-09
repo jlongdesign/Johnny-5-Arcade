@@ -1,0 +1,391 @@
+// ==================================================
+// TV EMULATOR COMPONENT
+// ==================================================
+@use 'variables';
+
+/* Retro TV Emulator */
+.retro-tv-container {
+    position: relative;
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 20px;
+}
+
+.retro-tv {
+    position: relative;
+    background: variables.$tv-body;
+    border-radius: 25px 25px 15px 15px;
+    padding: 40px 35px 60px 35px;
+    box-shadow: 
+        0 15px 35px rgba(0, 0, 0, 0.8),
+        inset 0 2px 10px rgba(255, 255, 255, 0.1),
+        0 0 0 3px variables.$bg-tertiary;
+    border: 3px solid variables.$tv-border;
+}
+
+.retro-tv::before {
+    content: '';
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 15px;
+    height: 15px;
+    background: variables.$power-light;
+    border-radius: 50%;
+    box-shadow: variables.$glow-red;
+    animation: power-light variables.$animation-slow ease-in-out infinite alternate;
+}
+
+@keyframes power-light {
+    0% { opacity: 0.6; box-shadow: 0 0 5px variables.$neon-red; }
+    100% { opacity: 1; box-shadow: variables.$glow-red; }
+}
+
+.retro-tv::after {
+    content: '';
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 8px;
+    background: linear-gradient(45deg, variables.$tv-knob-dark, variables.$tv-knob-light);
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.tv-screen {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4/3;
+    background: variables.$bg-primary;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 5px solid variables.$bg-tertiary;
+    box-shadow: 
+        inset 0 0 20px rgba(0, 0, 0, 0.8),
+        0 0 15px variables.$neon-cyan;
+}
+
+.tv-screen::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        linear-gradient(
+            90deg,
+            transparent 98%,
+            variables.$tv-static 100%
+        ),
+        linear-gradient(
+            transparent 98%,
+            variables.$tv-static 100%
+        );
+    background-size: 3px 3px;
+    pointer-events: none;
+    z-index: variables.$z-static;
+    animation: scanlines variables.$animation-fast linear infinite;
+}
+
+@keyframes scanlines {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(3px); }
+}
+
+.tv-screen::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(ellipse at center, transparent 60%, rgba(0, 0, 0, 0.4) 100%);
+    pointer-events: none;
+    z-index: 2;
+}
+
+.tv-controls {
+    position: absolute;
+    right: -25px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.tv-knob {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(145deg, variables.$tv-knob-light, variables.$tv-knob-dark);
+    border: 3px solid variables.$tv-border;
+    position: relative;
+    cursor: pointer;
+    transition: transform variables.$animation-normal ease;
+    box-shadow: 
+        inset 0 2px 5px rgba(255, 255, 255, 0.2),
+        0 3px 8px rgba(0, 0, 0, 0.5);
+}
+
+.tv-knob:hover {
+    transform: rotate(15deg);
+}
+
+.tv-knob::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 6px;
+    height: 15px;
+    background: variables.$bg-primary;
+    border-radius: 3px;
+}
+
+.retro-emulator {
+    width: 100% !important;
+    height: 100% !important;
+    border: none !important;
+    background: variables.$bg-primary;
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    z-index: 3;
+}
+
+.tv-static {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        repeating-linear-gradient(0deg, transparent, transparent 2px, variables.$tv-static 4px),
+        repeating-linear-gradient(90deg, transparent, transparent 2px, variables.$tv-static 4px);
+    animation: static-noise variables.$animation-fast infinite;
+    z-index: 3;
+}
+
+@keyframes static-noise {
+    0% { opacity: 0.05; }
+    50% { opacity: 0.1; }
+    100% { opacity: 0.05; }
+}
+
+.tv-loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: variables.$neon-green;
+    z-index: variables.$z-loading;
+    font-family: variables.$font-primary;
+}
+
+.tv-loading .loading-text {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    text-shadow: 0 0 10px variables.$neon-green;
+    animation: pulse-text variables.$animation-normal ease-in-out infinite;
+}
+
+@keyframes pulse-text {
+    0%, 100% { opacity: 0.6; }
+    50% { opacity: 1; }
+}
+
+@keyframes fadeInOut {
+    0% { opacity: 0; transform: translateY(-10px); }
+    10%, 90% { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0; transform: translateY(-10px); }
+}
+
+.retro-tv-brand {
+    position: absolute;
+    bottom: 25px;
+    left: 35px;
+    color: variables.$text-dark;
+    font-size: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* Enhanced TV Emulator Styles for Better Fullscreen */
+.tv-screen {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    background: variables.$bg-primary;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 3px solid variables.$border-cyan;
+    box-shadow: 0 0 30px rgba(variables.$neon-cyan, 0.5);
+}
+
+#tv-emulator {
+    width: 100% !important;
+    height: 100% !important;
+    border: none !important;
+    display: none;
+    object-fit: cover;
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    transform-origin: center center !important;
+}
+
+/* Force embedded content to scale properly and center align */
+.tv-screen iframe {
+    width: 100% !important;
+    height: 100% !important;
+    border: none !important;
+    background: variables.$bg-primary;
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) scale(1) !important;
+    transform-origin: center center !important;
+}
+
+/* For Archive.org embeds specifically - centered scaling */
+.tv-screen iframe[src*="archive.org"] {
+    transform: translate(-50%, -50%) scale(1.05) !important; /* Center then scale */
+    width: 105% !important;
+    height: 105% !important;
+}
+
+/* Game Modal TV - Larger screen */
+.game-modal .retro-tv .tv-screen {
+    width: 800px;
+    height: 600px;
+    max-width: 90vw;
+    max-height: 70vh;
+}
+
+.game-modal .retro-tv .tv-screen iframe {
+    width: 100% !important;
+    height: 100% !important;
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+}
+
+/* Fullscreen mode styles */
+.tv-fullscreen-mode {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    z-index: variables.$z-fullscreen !important;
+    background: variables.$bg-primary !important;
+    border-radius: 0 !important;
+    border: none !important;
+}
+
+.tv-fullscreen-mode .tv-screen {
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 0 !important;
+    border: none !important;
+}
+
+.tv-fullscreen-mode .tv-controls,
+.tv-fullscreen-mode .retro-tv-brand {
+    display: none !important;
+}
+
+/* Fullscreen toggle button */
+.tv-fullscreen-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: variables.$btn-retro-bg;
+    color: variables.$text-dark;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: variables.$font-primary;
+    font-size: 0.8rem;
+    font-weight: bold;
+    z-index: variables.$z-modal;
+    transition: all variables.$animation-fast;
+}
+
+.tv-fullscreen-btn:hover {
+    background: variables.$neon-cyan;
+    transform: scale(1.1);
+}
+
+/* Hide scrollbars in fullscreen */
+.tv-fullscreen-mode {
+    overflow: hidden !important;
+}
+
+/* Better scaling for different aspect ratios with centering */
+.tv-screen iframe[src*="emulatorjs"] {
+    transform: translate(-50%, -50%) scale(1.02) !important;
+}
+
+.tv-screen iframe[src*="retrogames"] {
+    transform: translate(-50%, -50%) scale(1.03) !important;
+}
+
+/* Loading and static overlays */
+.tv-loading,
+.tv-static {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: variables.$bg-primary;
+    z-index: variables.$z-loading;
+}
+
+/* Archive ORG specific styles */
+#canvasholder {
+    top: 0;
+    left: 0;
+    transform: none !important;
+    width: 100% !important;
+    #canvas {
+        width: 100% !important;
+        height: 100% !important;
+    }
+}
+
+// #canvas {
+//     width: 782px !important;
+//     height: 600px !important;
+// }
+
+/* FORCE ALL IFRAMES TO CENTER - HIGHEST SPECIFICITY */
+.tv-screen iframe,
+.tv-screen .retro-emulator,
+#tv-emulator,
+.game-modal .tv-screen iframe,
+.game-modal .tv-screen .retro-emulator,
+.retro-tv .tv-screen iframe,
+.retro-tv .tv-screen .retro-emulator {
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    margin: 0 !important;
+    transform-origin: center center !important;
+}
+

@@ -1,0 +1,207 @@
+// ==================================================
+// BUTTONS COMPONENT
+// ==================================================
+@use 'variables';
+@use 'mixins';
+
+// .retro-button {
+//     background: variables.$btn-retro-bg;
+//     color: variables.$text-dark;
+//     border: none;
+//     cursor: pointer;
+//     font-weight: bold;
+//     text-transform: uppercase;
+//     text-decoration: none;
+//     display: inline-block;
+//     transition: all variables.$animation-normal;
+//     font-family: variables.$font-primary;
+// }
+
+// .retro-button:hover {
+//     background: variables.$btn-retro-hover;
+//     transform: translateY(-2px);
+//     box-shadow: variables.$glow-green;
+//     color: white;
+// }
+
+.btn-retro {
+  background: linear-gradient(45deg, var(--c1), var(--c2));
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: all .3s ease;
+  letter-spacing: 1px;
+
+  &:hover {
+    background: linear-gradient(45deg, var(--c1), var(--c2));
+    transform: translateY(-2px);
+    box-shadow:
+      0 0 10px var(--glow1),
+      0 0 20px var(--glow2);
+    color: #fff;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow:
+      0 0 0 3px var(--glow1),
+      0 0 0 6px var(--glow2);
+  }
+}
+
+.btn-green {
+  --c1: #00ff00;
+  --c2: #00f2ff;
+  --glow1: rgba(0, 255, 136, 0.5);
+  --glow2: rgba(0, 119, 68, 0.5);
+}
+
+.btn-blue {
+  --c1: #00ffff;
+  --c2: #2f00ff;
+  --glow1: rgba(0, 200, 255, 0.5);
+  --glow2: rgba(0, 59, 136, 0.5);
+}
+
+.btn-orange {
+  --c1: #ff8800;
+  --c2: #ff4400;
+  --glow1: rgba(255, 136, 0, 0.5);
+  --glow2: rgba(255, 68, 0, 0.5);
+}
+
+.btn-yellow {
+  --c1: #ffff00;
+  --c2: #ffa200;
+  --glow1: rgba(255, 233, 90, 0.45);
+  --glow2: rgba(181, 154, 0, 0.45);
+}
+
+.btn-magenta {
+  --c1: #ff0080;
+  --c2: #8000ff;
+  --glow1: rgba(255, 0, 128, 0.6);
+  --glow2: rgba(128, 0, 255, 0.6);
+}
+
+.btn-black {
+  --c1: #000000;
+  --c2: #333333;
+  --glow1: rgba(0, 0, 0, 0.5);
+  --glow2: rgba(51, 51, 51, 0.5);
+}
+
+.btn-red {
+  --c1: #ff0000;
+  --c2: #ff3333;
+  --glow1: rgba(255, 0, 0, 0.5);
+  --glow2: rgba(255, 51, 51, 0.5);
+}
+
+.btn-secondary {
+  --c1: #aaaaaa;
+  --c2: #666666;
+  --glow1: rgba(170, 170, 170, 0.5);
+  --glow2: rgba(102, 102, 102, 0.5);
+}
+
+
+
+
+
+
+
+
+
+
+
+// === Glass Buttons Styles ===
+
+// Base Glass Button Style
+.btn-glass {
+  padding: 0.65rem 1.4rem;
+  border-radius: 50px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  background-clip: padding-box;
+  position: relative;
+  overflow: hidden;
+
+  &:hover {
+    transform: translateY(-1px) scale(1.02);
+    box-shadow:
+      0 12px 35px rgba(0, 255, 255, 0.35);
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+
+  &:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(255,255,255,0.25);
+  }
+}
+
+// Shine Effect for Glass Button
+.btn-glass::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.35),
+    transparent
+  );
+  transform: translateX(-120%);
+  transition: transform 0.6s ease;
+}
+
+// Hover Effect for Glass Button
+.btn-glass:hover::before {
+  transform: translateX(120%);
+}
+
+// Neon Pulse Animation
+@keyframes neonPulse {
+  0% { box-shadow: 0 0 10px rgba(0,255,255,0.3); }
+  50% { box-shadow: 0 0 25px rgba(0,255,255,0.6); }
+  100% { box-shadow: 0 0 10px rgba(0,255,255,0.3); }
+}
+
+// Apply Neon Pulse Animation
+.btn-glass-pulse {
+  animation: neonPulse 2.5s infinite;
+}
+
+// Subtle Idle Animation
+@keyframes neonIdle {
+  0%   { filter: brightness(1); }
+  50%  { filter: brightness(2.15); }
+  100% { filter: brightness(1); }
+}
+
+// Apply Idle Animation
+.btn-glass {
+  animation: neonIdle 3.5s ease-in-out infinite;
+}
+
+
+// Glass Button Color Variants
+.btn-glass-cyan   { @include mixins.glass-button(#00ffff); }
+.btn-glass-pink   { @include mixins.glass-button(#ff2bdc); }
+.btn-glass-green  { @include mixins.glass-button(#00ff6a); }
+.btn-glass-purple { @include mixins.glass-button(#9b5cff); }
+.btn-glass-orange { @include mixins.glass-button(#ff8a00); }
+.btn-glass-secondary { @include mixins.glass-button(#aaaaaa); }

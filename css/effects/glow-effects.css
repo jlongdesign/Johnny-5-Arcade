@@ -1,0 +1,14 @@
+.glow-bg {
+  position: relative;
+  z-index: 0;
+}
+.glow-bg::before {
+  content: "";
+  position: absolute;
+  inset: -20%;
+  background: radial-gradient(circle, rgba(0, 255, 255, 0.7) 0%, rgba(0, 255, 255, 0.4) 40%, rgba(0, 255, 255, 0.15) 60%, transparent 80%);
+  -webkit-filter: blur(40px);
+          filter: blur(40px);
+  z-index: -1;
+  pointer-events: none;
+}

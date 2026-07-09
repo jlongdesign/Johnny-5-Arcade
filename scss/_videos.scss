@@ -1,0 +1,46 @@
+// ==================================================
+// VIDEO COMPONENTS
+// ==================================================
+@use 'variables';
+
+.video-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin: 30px 0;
+}
+
+.video-card {
+    // background: variables.$bg-tertiary;
+    // border: 2px solid variables.$neon-orange;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all variables.$animation-normal;
+}
+
+.video-card:hover {
+    transform: scale(1.02);
+    box-shadow: variables.$shadow-orange;
+}
+
+.video-thumbnail {
+    width: 100%;
+    // height: 200px;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.video-info {
+    padding: 15px;
+}
+
+.video-title {
+    color: variables.$neon-orange;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+.video-description {
+    color: variables.$text-muted;
+    font-size: 0.9rem;
+}

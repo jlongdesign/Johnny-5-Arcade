@@ -1,0 +1,347 @@
+@use 'variables';
+
+// Global Utility Classes
+// --------------------------------------------------
+
+// Backgrounds
+// --------------------------------------------------
+.section-bg {
+    // background: linear-gradient(135deg, variables.$bg-secondary, variables.$bg-quaternary);
+}
+
+.card-bg {
+    background: linear-gradient(135deg, rgb(42, 42, 26), rgb(58, 58, 42));
+}
+
+.card-animate { 
+    &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    scale: 1.02;
+    }
+}
+
+// Border Lime
+// --------------------------------------------------
+.border-lime {
+    border: 2px solid lime;
+}
+.border-lime-glow {
+    -webkit-box-shadow: 0 0 15px lime;
+    box-shadow: 0 0 15px lime;
+}
+.border-lime-glow:hover {
+    -webkit-box-shadow: 0 0 25px lime;
+    box-shadow: 0 0 25px lime;
+}
+.border-lime-glow:active {
+    -webkit-box-shadow: 0 0 10px lime;
+    box-shadow: 0 0 10px lime;
+}
+.border-lime-glow:focus {
+    -webkit-box-shadow: 0 0 20px lime;
+    box-shadow: 0 0 20px lime;
+}
+.border-lime-glow:focus-visible {
+    -webkit-box-shadow: 0 0 30px lime;
+    box-shadow: 0 0 30px lime;
+}
+.border-lime-glow:focus-within {
+    -webkit-box-shadow: 0 0 40px lime;
+    box-shadow: 0 0 40px lime;
+}
+.border-lime-glow:active:hover {
+    -webkit-box-shadow: 0 0 35px lime;
+    box-shadow: 0 0 35px lime;
+}
+.border-lime-glow:active:focus {
+    -webkit-box-shadow: 0 0 50px lime;
+    box-shadow: 0 0 50px lime;
+}
+.border-lime-glow:active:focus-visible {
+    -webkit-box-shadow: 0 0 60px lime;
+    box-shadow: 0 0 60px lime;
+}
+.border-lime-glow:active:focus-within {
+    -webkit-box-shadow: 0 0 70px lime;
+    box-shadow: 0 0 70px lime;
+}
+
+// Border Radius
+// --------------------------------------------------
+.border-radius {
+    border-radius: 8px;
+}   
+
+// Border Cyan
+// --------------------------------------------------
+.border-cyan {
+    border: 2px solid cyan;
+}
+.border-cyan-glow {
+    -webkit-box-shadow: 0 0 15px cyan;
+    box-shadow: 0 0 15px cyan;
+}
+.border-cyan-glow:hover {
+    -webkit-box-shadow: 0 0 25px cyan;
+    box-shadow: 0 0 25px cyan;
+}
+.border-cyan-glow:active {
+    -webkit-box-shadow: 0 0 10px cyan;
+    box-shadow: 0 0 10px cyan;
+}
+.border-cyan-glow:focus {
+    -webkit-box-shadow: 0 0 20px cyan;
+    box-shadow: 0 0 20px cyan;
+}
+.border-cyan-glow:focus-visible {   
+    -webkit-box-shadow: 0 0 30px cyan;
+    box-shadow: 0 0 30px cyan;
+}
+.border-cyan-glow:focus-within {
+    -webkit-box-shadow: 0 0 40px cyan;
+    box-shadow: 0 0 40px cyan;
+}
+.border-cyan-glow:active:hover {
+    -webkit-box-shadow: 0 0 35px cyan;
+    box-shadow: 0 0 35px cyan;
+}
+.border-cyan-glow:active:focus {
+    -webkit-box-shadow: 0 0 50px cyan;
+    box-shadow: 0 0 50px cyan;
+}
+.border-cyan-glow:active:focus-visible {
+    -webkit-box-shadow: 0 0 60px cyan;
+    box-shadow: 0 0 60px cyan;
+}
+
+// Border Orange
+// --------------------------------------------------
+.border-orange {
+    border: 2px solid orange;
+}
+.border-orange-glow {
+    -webkit-box-shadow: 0 0 15px orange;
+    box-shadow: 0 0 15px orange;
+}
+.border-orange-glow:hover {
+    -webkit-box-shadow: 0 0 25px orange;
+    box-shadow: 0 0 25px orange;
+}
+.border-orange-glow:active {
+    -webkit-box-shadow: 0 0 10px orange;
+    box-shadow: 0 0 10px orange;
+}
+.border-orange-glow:focus {
+    -webkit-box-shadow: 0 0 20px orange;
+    box-shadow: 0 0 20px orange;
+}
+.border-orange-glow:focus-visible {
+    -webkit-box-shadow: 0 0 30px orange;
+    box-shadow: 0 0 30px orange;
+}
+.border-orange-glow:focus-within {
+    -webkit-box-shadow: 0 0 40px orange;
+    box-shadow: 0 0 40px orange;
+}
+.border-orange-glow:active:hover {
+    -webkit-box-shadow: 0 0 35px orange;
+    box-shadow: 0 0 35px orange;
+}
+.border-orange-glow:active:focus {
+    -webkit-box-shadow: 0 0 50px orange;
+    box-shadow: 0 0 50px orange;
+}
+.border-orange-glow:active:focus-visible {
+    -webkit-box-shadow: 0 0 60px orange;
+    box-shadow: 0 0 60px orange;
+}
+.border-orange-glow:active:focus-within {
+    -webkit-box-shadow: 0 0 70px orange;
+    box-shadow: 0 0 70px orange;
+}
+
+// Border Magenta
+// --------------------------------------------------
+.border-magenta {
+    border: 2px solid magenta;
+}
+.border-magenta-glow {  
+    -webkit-box-shadow: 0 0 15px magenta;
+    box-shadow: 0 0 15px magenta;
+}
+.border-magenta-glow:hover {
+    -webkit-box-shadow: 0 0 25px magenta;
+    box-shadow: 0 0 25px magenta;
+}
+.border-magenta-glow:active {
+    -webkit-box-shadow: 0 0 10px magenta;
+    box-shadow: 0 0 10px magenta;
+}
+.border-magenta-glow:focus {
+    -webkit-box-shadow: 0 0 20px magenta;
+    box-shadow: 0 0 20px magenta;
+}
+.border-magenta-glow:focus-visible {
+    -webkit-box-shadow: 0 0 30px magenta;
+    box-shadow: 0 0 30px magenta;
+}
+.border-magenta-glow:focus-within {
+    -webkit-box-shadow: 0 0 40px magenta;
+    box-shadow: 0 0 40px magenta;
+}
+.border-magenta-glow:active:hover {
+    -webkit-box-shadow: 0 0 35px magenta;
+    box-shadow: 0 0 35px magenta;
+}
+.border-magenta-glow:active:focus {
+    -webkit-box-shadow: 0 0 50px magenta;
+    box-shadow: 0 0 50px magenta;
+}
+.border-magenta-glow:active:focus-visible {
+    -webkit-box-shadow: 0 0 60px magenta;
+    box-shadow: 0 0 60px magenta;
+}
+.border-magenta-glow:active:focus-within {
+    -webkit-box-shadow: 0 0 70px magenta;
+    box-shadow: 0 0 70px magenta;
+}
+
+// Border Yellow
+// --------------------------------------------------
+.border-yellow {
+    border: 2px solid yellow;
+}
+.border-yellow-glow {
+    -webkit-box-shadow: 0 0 15px yellow;
+    box-shadow: 0 0 15px yellow;
+}
+.border-yellow-glow:hover {
+    -webkit-box-shadow: 0 0 25px yellow;
+    box-shadow: 0 0 25px yellow;
+}
+.border-yellow-glow:active {
+    -webkit-box-shadow: 0 0 10px yellow;
+    box-shadow: 0 0 10px yellow;
+}
+.border-yellow-glow:focus {
+    -webkit-box-shadow: 0 0 20px yellow;
+    box-shadow: 0 0 20px yellow;
+}
+.border-yellow-glow:focus-visible {
+    -webkit-box-shadow: 0 0 30px yellow;
+    box-shadow: 0 0 30px yellow;
+}
+.border-yellow-glow:focus-within {
+    -webkit-box-shadow: 0 0 40px yellow;
+    box-shadow: 0 0 40px yellow;
+}
+.border-yellow-glow:active:hover {  
+    -webkit-box-shadow: 0 0 35px yellow;
+    box-shadow: 0 0 35px yellow;
+}
+.border-yellow-glow:active:focus {
+    -webkit-box-shadow: 0 0 50px yellow;
+    box-shadow: 0 0 50px yellow;
+}
+.border-yellow-glow:active:focus-visible {
+    -webkit-box-shadow: 0 0 60px yellow;
+    box-shadow: 0 0 60px yellow;
+}
+.border-yellow-glow:active:focus-within {
+    -webkit-box-shadow: 0 0 70px yellow;
+    box-shadow: 0 0 70px yellow;
+}
+
+// Border Red
+// --------------------------------------------------
+.border-red {
+    border: 2px solid red;
+}
+.border-red-glow {
+    -webkit-box-shadow: 0 0 15px red;
+    box-shadow: 0 0 15px red;
+}
+.border-red-glow:hover {
+    -webkit-box-shadow: 0 0 25px red;
+    box-shadow: 0 0 25px red;
+}
+.border-red-glow:active {
+    -webkit-box-shadow: 0 0 10px red;
+    box-shadow: 0 0 10px red;
+}
+.border-red-glow:focus {
+    -webkit-box-shadow: 0 0 20px red;
+    box-shadow: 0 0 20px red;
+}
+.border-red-glow:focus-visible {
+    -webkit-box-shadow: 0 0 30px red;
+    box-shadow: 0 0 30px red;
+}
+.border-red-glow:focus-within {
+    -webkit-box-shadow: 0 0 40px red;
+    box-shadow: 0 0 40px red;
+}
+.border-red-glow:active:hover {
+    -webkit-box-shadow: 0 0 35px red;
+    box-shadow: 0 0 35px red;
+}
+.border-red-glow:active:focus {
+    -webkit-box-shadow: 0 0 50px red;
+    box-shadow: 0 0 50px red;
+}
+.border-red-glow:active:focus-visible {
+    -webkit-box-shadow: 0 0 60px red;
+    box-shadow: 0 0 60px red;
+}
+.border-red-glow:active:focus-within {
+    -webkit-box-shadow: 0 0 70px red;
+    box-shadow: 0 0 70px red;
+}
+
+
+// Text Colors
+// --------------------------------------------------
+.text-cyan {
+    color: variables.$neon-cyan !important;
+}
+.text-green {
+    color: variables.$neon-green !important;
+}
+.text-magenta {
+    color: variables.$neon-magenta !important;
+}
+.text-yellow {
+    color: variables.$neon-yellow !important;
+}
+.text-red {
+    color: variables.$neon-red !important;
+}
+.text-orange {
+    color: variables.$neon-orange !important;
+}
+
+// Text Shadows
+// --------------------------------------------------
+.text-shadow-white {
+    text-shadow: variables.$glow-white !important;
+}
+.text-shadow-cyan {
+    text-shadow: variables.$glow-cyan !important;
+}
+.text-shadow-green {
+    text-shadow: variables.$glow-green !important;
+}
+.text-shadow-magenta {
+    text-shadow: variables.$glow-magenta !important;
+}
+.text-shadow-yellow {
+    text-shadow: variables.$glow-yellow !important;
+}
+.text-shadow-red {
+    text-shadow: variables.$glow-red !important;
+}
+.text-shadow-orange {
+    text-shadow: variables.$glow-orange !important;
+}

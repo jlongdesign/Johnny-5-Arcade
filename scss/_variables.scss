@@ -1,0 +1,250 @@
+// ==================================================
+// JOHNNY 5 ARCADE - COLOR VARIABLES
+// ==================================================
+
+// Basic Colors
+// --------------------------------------------------
+$black: #000000 !default;    // Pure black for utility classes
+
+$gray-dark: #18181c !default;    // Dark gray for sections, mod info, requirements
+$gray-mid: #333333 !default;    // Medium gray for cards, navigation, secondary elements
+$gray-light: #555555 !default;    // Light gray for text, borders
+
+$cyan: #00ffff;
+$green: #00ff00;
+$yellow: #ffff00;
+$orange: #ff8000;
+$magenta: #ff00ff;
+$red: #ff0000;
+
+// Primary Neon Colors
+// --------------------------------------------------
+$neon-cyan:     #00ffff !default;    // Site title, game cards, links
+$neon-green:    #00ff00 !default;    // Main text, navigation, buttons
+$neon-magenta:  #ff00ff !default;    // Section borders, accordions
+$neon-yellow:   #ffff00 !default;    // Reviews, filters, requirements
+$neon-orange:   #ff8000 !default;    // Videos, mod info, reviews
+
+// Secondary Neon Colors
+// --------------------------------------------------
+$neon-red:      #ff0000 !default;    // Power light, close buttons
+$neon-purple:   #8000ff !default;    // Button gradients
+$neon-pink:     #ff0080 !default;    // Button gradients
+
+// Accent Colors
+// --------------------------------------------------
+$orange-light: #ffa94d;
+$orange-mid: #ff8c42;
+$orange-dark: #d65a00;
+$yellow-light: #ffff99;
+$yellow-mid: #ffff66;
+$yellow-dark: #cccc00;
+$cyan-light: #99ffff;
+$cyan-mid: #66ffff;
+$cyan-dark: #00cccc;
+$magenta-light: #ff99ff;
+$magenta-mid: #ff66ff;
+$magenta-dark: #cc00cc;
+$green-light: #99ff99;
+$green-mid: #66ff66;
+$green-dark: #00cc00;
+
+// Background Colors
+// --------------------------------------------------
+$bg-primary:      #000000 !default;    // Black
+$bg-secondary:  #0a0a0a !default;    // Header/footer base
+$bg-tertiary:   #1a1a1a !default;    // Cards, navigation, secondary elements
+$bg-quaternary: #2a2a2a !default;    // Game cards, review cards
+
+// Specialized Background Gradients
+// --------------------------------------------------
+$bg-header:     linear-gradient(45deg, #0a0a0a, #1a1a1a) !default;
+$bg-arcade:     linear-gradient(135deg, #0a0a0a, #2a2a2a) !default;
+$bg-reviews:    linear-gradient(135deg, #1a0a1a, #2a1a2a) !default;
+$bg-requirements: linear-gradient(135deg, #1a1a1a, #2a2a1a) !default;
+$bg-installation: linear-gradient(135deg, #1a0a1a, #2a1a2a) !default;
+$bg-downloads:  linear-gradient(135deg, #0a1a0a, #1a2a1a) !default;
+
+// TV/Retro Elements
+// --------------------------------------------------
+$tv-body:       linear-gradient(145deg, #2a2a2a, #1a1a1a) !default;
+$tv-border:     #333333 !default;
+$tv-knob-light: #666666 !default;
+$tv-knob-dark:  #333333 !default;
+$tv-static:     rgba(255, 255, 255, 0.05) !default;
+
+// Text Colors
+// --------------------------------------------------
+$text-primary:    white !default;     // Main text color
+$text-secondary:  #cccccc !default;         // Video descriptions, secondary text
+$text-muted:      #999999 !default;         // Meta information, timestamps
+$text-dark:       #000000 !default;         // Text on light backgrounds
+
+// Border Colors
+// --------------------------------------------------
+$border-cyan:     $neon-cyan;      // Game cards
+$border-green:    $neon-green;     // Navigation, main elements
+$border-magenta:  $neon-magenta;   // Arcade sections
+$border-yellow:   $neon-yellow;    // Filters, requirements
+$border-orange:   $neon-orange;    // Videos, mod elements
+$border-dark:     #444444 !default;         // Subtle borders
+$border-secondary: #555555 !default;        // Modal headers
+
+// Button Colors
+// --------------------------------------------------
+$btn-retro-bg:    linear-gradient(45deg, $neon-green, #00cc00) !default;
+$btn-retro-hover: linear-gradient(45deg, #00cc00, #00aa00) !default;
+$btn-play-bg:     linear-gradient(45deg, $neon-pink, $neon-purple) !default;
+$btn-danger:      $neon-red !default;
+$btn-danger-hover: #cc0000 !default;
+
+// State Colors
+// --------------------------------------------------
+$success:         $neon-green;
+$warning:         $neon-yellow;
+$error:           $neon-red;
+$info:            $neon-cyan;
+
+// Accordion Specific Colors
+// --------------------------------------------------
+$accordion-requirements-bg:     $bg-requirements;
+$accordion-requirements-border: $neon-yellow;
+$accordion-requirements-text:   $neon-yellow;
+
+$accordion-installation-bg:     $bg-installation;
+$accordion-installation-border: $neon-magenta;
+$accordion-installation-text:   $neon-magenta;
+
+// Shadow Colors
+// --------------------------------------------------
+$shadow-cyan:     rgba(0, 255, 255, 0.3) !default;
+$shadow-green:    rgba(0, 255, 0, 0.3) !default;
+$shadow-magenta:  rgba(255, 0, 255, 0.3) !default;
+$shadow-orange:   rgba(255, 128, 0, 0.4) !default;
+$shadow-pink:     rgba(255, 0, 128, 0.5) !default;
+$shadow-dark:     rgba(0, 0, 0, 0.8) !default;
+
+// Glow Effects
+// --------------------------------------------------
+$glow-white:      0 0 20px white !default;
+$glow-cyan:       0 0 20px $neon-cyan !default;
+$glow-green:      0 0 15px $neon-green !default;
+$glow-orange:     0 0 10px $neon-orange !default;
+$glow-magenta:    0 0 20px $neon-magenta !default;
+$glow-yellow:     0 0 10px $neon-yellow !default;
+$glow-red:        0 0 15px $neon-red !default;
+
+// Special Effect Colors
+// --------------------------------------------------
+$crt-overlay:     rgba(0, 255, 0, 0.03);
+$scanlines:       rgba(0, 255, 0, 0.03);
+$power-light:     radial-gradient(circle, $neon-red 0%, #cc0000 70%, #990000 100%);
+
+// Game Type Specific Colors
+// --------------------------------------------------
+$mod-info:        $neon-orange;    // Mod information sections
+$load-order:      $neon-yellow;    // Load order & compatibility
+$downloads:       $neon-green;     // Download sections
+
+// Badge Colors
+// --------------------------------------------------
+$badge-orange:    rgba(255, 128, 0, 0.2);
+$badge-green:     rgba(0, 255, 0, 0.2);
+$badge-yellow:    $neon-yellow;
+$badge-magenta:   $neon-magenta;
+
+// Scrollbar Colors
+// --------------------------------------------------
+$scrollbar-track: $bg-tertiary;
+$scrollbar-thumb: $btn-retro-bg;
+$scrollbar-hover: $btn-retro-hover;
+
+// ==================================================
+// RESPONSIVE BREAKPOINTS
+// ==================================================
+$breakpoint-mobile: 480px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
+$breakpoint-large: 1200px;
+
+// ==================================================
+// FONT FAMILIES
+// ==================================================
+$font-primary: 'Roboto', sans-serif;
+
+// ==================================================
+// Z-INDEX LAYERS
+// ==================================================
+$z-crt-overlay: 9999;
+$z-fullscreen: 10001;
+$z-modal: 10000;
+$z-tv-controls: 10;
+$z-loading: 5;
+$z-static: 1;
+
+// ==================================================
+// ANIMATION DURATIONS
+// ==================================================
+$animation-fast: 0.15s;
+$animation-normal: 0.3s;
+$animation-slow: 2s;
+
+// ==================================================
+// SPACING SYSTEM
+// ==================================================
+$spacing-xs: 5px;
+$spacing-sm: 10px;
+$spacing-md: 15px;
+$spacing-lg: 20px;
+$spacing-xl: 30px;
+$spacing-xxl: 40px;
+
+// === Dark Glassmorphism Variables ===
+$glass-dark-bg: rgba(10, 14, 25, 0.65);
+$glass-dark-border: rgba(255, 255, 255, 0.08);
+$glass-dark-shadow: rgba(0, 0, 0, 0.55);
+$glass-dark-highlight: rgba(255, 255, 255, 0.06);
+
+
+// === Glass Buttons Variables ===
+$glass-blur: 12px;
+$glass-opacity: 0.18;
+$border-opacity: 0.35;
+$glow-opacity: 0.45;
+$transition-fast: 0.25s ease;
+
+$glass-opacity: 0.28;      // was ~0.18
+$border-opacity: 0.6;     // sharper edge
+$glow-opacity: 0.85;      // BIG glow
+$glass-blur: 14px;
+
+
+// CRT colors & strength
+$crt-scanline-opacity: 0.05;
+$crt-vignette-strength: 0.85;
+$crt-border-radius: 14px;
+$crt-perspective: 800px;
+$crt-contrast: 1.15;
+$crt-saturation: 1.2;
+
+
+// ==================================================
+// CSS VARIABLES FOR UTILITY CLASSES
+// ==================================================
+:root {
+    --orange-light: #ffa94d;
+    --orange-mid: #ff8c42;
+    --orange-dark: #d65a00;
+    --yellow-light: #ffff99;
+    --yellow-mid: #ffff66;
+    --yellow-dark: #cccc00;
+    --cyan-light: #99ffff;
+    --cyan-mid: #66ffff;
+    --cyan-dark: #00cccc;
+    --magenta-light: #ff99ff;
+    --magenta-mid: #ff66ff;
+    --magenta-dark: #cc00cc;
+    --green-light: #99ff99;
+    --green-mid: #66ff66;
+    --green-dark: #00cc00;
+}

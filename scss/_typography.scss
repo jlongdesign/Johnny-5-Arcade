@@ -1,0 +1,29 @@
+// Typography Styles
+// ==================================================   
+@use 'variables';
+
+// Color Utility Classes
+.color-cyan {
+    color: variables.$cyan !important;
+}
+.color-green {
+    color: variables.$green !important;
+}
+.color-magenta {
+    color: variables.$magenta !important;
+}
+.color-yellow {
+    color: variables.$yellow !important;
+}
+.color-orange {
+    color: variables.$orange !important;
+}
+.color-red {
+    color: variables.$red !important;
+}
+.color-white {  
+    color: white !important;
+}
+.color-black {  
+    color: black !important;
+}

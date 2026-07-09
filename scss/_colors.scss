@@ -1,0 +1,70 @@
+// Background Color Utility Classes
+.bg-black { background-color: var(--black); }
+.bg-dark-gray { background-color: var(--dark-gray); }
+.bg-light-gray { background-color: var(--light-gray); }
+.bg-orange { background-color: var(--orange); }
+.bg-yellow { background-color: var(--yellow); }
+.bg-cyan { background-color: var(--cyan); }
+.bg-green { background-color: var(--green); }
+.bg-magenta { background-color: var(--magenta); }
+
+.text-black { color: var(--black); }
+.text-dark-gray { color: var(--dark-gray); }
+.text-light-gray { color: var(--light-gray); }
+.text-orange { color: var(--orange); }
+.text-yellow { color: var(--yellow); }
+.text-cyan { color: var(--cyan); }
+.text-green { color: var(--green); }
+.text-magenta { color: var(--magenta); }
+
+
+// Orange Gradient Utility Class
+.bg-orange-gradient {
+  background: linear-gradient(
+    135deg,
+    var(--orange-light) 0%,
+    var(--orange-mid) 50%,
+    var(--orange-dark) 100%
+  );
+}
+
+// Yellow Gradient Utility Class
+.bg-yellow-gradient {
+  background: linear-gradient(
+    135deg,
+    var(--yellow-light) 0%,
+    var(--yellow-mid) 50%,
+    var(--yellow-dark) 100%
+  );
+}
+
+// Cyan Gradient Utility Class
+.bg-cyan-gradient {
+  background: linear-gradient(
+    135deg,
+    var(--cyan-light) 0%,
+    var(--cyan-mid) 50%,
+    var(--cyan-dark) 100%
+  );
+}
+
+// Magenta Gradient Utility Class
+.bg-magenta-gradient {
+  background: linear-gradient(
+    135deg,
+    var(--magenta-light) 0%,
+    var(--magenta-mid) 50%,
+    var(--magenta-dark) 100%
+  );
+}
+
+// Green Gradient Utility Class
+.bg-green-gradient {
+  background: linear-gradient(
+    135deg,
+    var(--green-light) 0%,
+    var(--green-mid) 50%,
+    var(--green-dark) 100%
+  );
+}
+

@@ -1,0 +1,26 @@
+@-webkit-keyframes crt-flicker {
+  0% {
+    opacity: 0.98;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.97;
+  }
+}
+@keyframes crt-flicker {
+  0% {
+    opacity: 0.98;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.97;
+  }
+}
+.crt--flicker {
+  -webkit-animation: crt-flicker 0.12s infinite;
+          animation: crt-flicker 0.12s infinite;
+}
