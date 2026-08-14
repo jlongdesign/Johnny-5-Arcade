@@ -333,6 +333,9 @@ function arcade_hub_admin_scripts($hook) {
 }
 add_action('admin_enqueue_scripts', 'arcade_hub_admin_scripts');
 
+// Use classic editor for all post types
+add_filter('use_block_editor_for_post_type', '__return_false');
+
 // Create arcade-hub directory for ROM files
 function arcade_hub_create_rom_directory() {
     $upload_dir = wp_upload_dir();
@@ -675,7 +678,6 @@ function register_gaming_news_post_type() {
         'menu_position' => 5,
         'has_archive' => true,
         'rewrite' => array('slug' => 'gaming-news'),
-        'show_in_rest' => true,
         'capability_type' => 'post',
         'hierarchical' => false,
         'public' => true,
@@ -706,7 +708,6 @@ function register_gaming_news_taxonomies() {
         'hierarchical' => true,
         'public' => true,
         'rewrite' => array('slug' => 'news-category'),
-        'show_in_rest' => true,
     ));
     
     // News Tags
@@ -719,7 +720,6 @@ function register_gaming_news_taxonomies() {
         'hierarchical' => false,
         'public' => true,
         'rewrite' => array('slug' => 'news-tag'),
-        'show_in_rest' => true,
     ));
 }
 add_action('init', 'register_gaming_news_taxonomies');
@@ -949,10 +949,9 @@ function arcade_hub_post_types() {
         ),
         'public' => true,
         'has_archive' => true,
-        'supports' => array('title', 'editor', 'thumbnail', 'excerpt', 'custom-fields', 'comments'),
+        'supports' => array('title', 'editor', 'thumbnail', 'excerpt', 'comments'),
         'menu_icon' => 'dashicons-admin-tools',
         'rewrite' => array('slug' => 'mods'),
-        'show_in_rest' => true,
     ));
 }
 add_action('init', 'arcade_hub_post_types');
@@ -1029,7 +1028,6 @@ function arcade_hub_taxonomies() {
         'hierarchical' => true,
         'public' => true,
         'rewrite' => array('slug' => 'base-game'),
-        'show_in_rest' => true,
     ));
 
     // Mod Category taxonomy (gameplay, graphics, sound, etc.)
@@ -1048,7 +1046,6 @@ function arcade_hub_taxonomies() {
         'hierarchical' => true,
         'public' => true,
         'rewrite' => array('slug' => 'mod-category'),
-        'show_in_rest' => true,
     ));
 
     // Mod Type taxonomy (total conversion, map pack, weapon mod, etc.)
@@ -1067,7 +1064,6 @@ function arcade_hub_taxonomies() {
         'hierarchical' => false,
         'public' => true,
         'rewrite' => array('slug' => 'mod-type'),
-        'show_in_rest' => true,
     ));
 }
 add_action('init', 'arcade_hub_taxonomies');

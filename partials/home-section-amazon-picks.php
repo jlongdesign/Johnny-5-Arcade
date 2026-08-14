@@ -92,8 +92,7 @@ $storefront_url = 'https://a.co/d/0frvA0qY';
                                 src="<?php echo esc_url( $product['image'] ); ?>"
                                 alt="<?php echo esc_attr( $product['name'] ); ?>"
                                 class="amazon-product-img"
-                                loading="lazy"
-                                onerror="this.parentElement.innerHTML='<div class=\'amazon-product-img-placeholder\'><i class=\'fas fa-shopping-cart\'></i></div>'">
+                                loading="lazy">
                         </div>
 
                         <!-- Info -->
