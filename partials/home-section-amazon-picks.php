@@ -58,7 +58,7 @@ $storefront_url = 'https://a.co/d/0frvA0qY';
         <div class="row mb-4">
             <div class="col-12 text-center">
                 <h2 class="amazon-picks-title color-orange text-shadow-orange mb-2">
-                    🛒 Johnny's Top Amazon Picks
+                    🛒 Johnny 5 Arcade's Top Amazon Picks
                 </h2>
                 <p class="amazon-picks-subtitle text-white">
                     Gear I actually use and recommend — curated from my game room to yours.
