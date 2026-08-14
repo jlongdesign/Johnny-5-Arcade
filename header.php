@@ -16,8 +16,8 @@
     
     <header class="site-header py-3 bg-black">
         <div class="container">
-            <div class="row align-items-center py-3">
-                <div class="col-9 col-md-5">
+            <div class="site-header-bar d-flex align-items-center">
+                <div class="site-logo-wrap me-auto">
                     <?php if (has_custom_logo()) : ?>
                         <div class="site-logo d-flex align-items-center flex-md-row text-left">
                             <div class="logo-container me-2 me-md-3 mb-2 mb-md-0">
@@ -46,9 +46,9 @@
                             <?php endif; ?>
                         </div>
                     <?php endif; ?>
-                </div>
-                <div class="col-auto ms-md-auto text-center text-md-end mt-3 mt-md-0">
-                     <?php
+                </div><!-- end site-logo-wrap -->
+
+                <?php
                         // Custom Bootstrap nav walker - define before use
                         if (!class_exists('WP_Bootstrap_Navwalker')) {
                             class WP_Bootstrap_Navwalker extends Walker_Nav_Menu {
@@ -104,28 +104,58 @@
                         }
                         ?>
 
-                        
-                        <nav class="main-navigation navbar navbar-expand-lg navbar-dark">
-                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                                <span class="navbar-toggler-icon"></span>
-                            </button>
-                            <div class="collapse navbar-collapse" id="navbarNav">
-                                <?php
-                                wp_nav_menu(array(
-                                    'theme_location' => 'primary',
-                                    'menu_class' => 'navbar-nav me-auto',
-                                    'container' => false,
-                                    'fallback_cb' => 'arcade_hub_fallback_menu',
-                                    'walker' => new WP_Bootstrap_Navwalker(),
-                                ));
-                                ?>
-                            </div><!-- end collapse -->
+                        <!-- Desktop nav (lg and up) -->
+                        <nav class="main-navigation navbar navbar-dark p-0 d-none d-lg-flex">
+                            <?php
+                            wp_nav_menu(array(
+                                'theme_location' => 'primary',
+                                'menu_class' => 'navbar-nav',
+                                'container' => false,
+                                'fallback_cb' => 'arcade_hub_fallback_menu',
+                                'walker' => new WP_Bootstrap_Navwalker(),
+                            ));
+                            ?>
                         </nav>
 
-                        
-                </div><!-- end col -->
-            </div><!-- end row -->
-        </div><!-- end container -->
+                        <!-- Work With Me CTA (desktop) -->
+                        <a href="<?php echo esc_url( home_url( '/work-with-me/' ) ); ?>" class="header-wwm-btn btn btn-retro btn-orange d-none d-lg-inline-flex align-items-center gap-2 ms-3">
+                            🤝 <span>Work With Me</span>
+                        </a>
+
+                        <!-- Mobile hamburger (below lg) -->
+                        <button class="navbar-toggler d-lg-none ms-3" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#mobileNavDrawer"
+                                aria-controls="mobileNavDrawer" aria-expanded="false"
+                                aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+
+                </div><!-- end site-header-bar -->
+            </div><!-- end container -->
+
+            <!-- Mobile nav drawer (full-width, slides below header bar) -->
+            <div class="collapse" id="mobileNavDrawer">
+                <div class="mobile-nav-drawer">
+                    <div class="container">
+                        <?php
+                        wp_nav_menu(array(
+                            'theme_location' => 'primary',
+                            'menu_class' => 'mobile-nav-list',
+                            'container' => false,
+                            'fallback_cb' => 'arcade_hub_fallback_menu',
+                            'walker' => new WP_Bootstrap_Navwalker(),
+                        ));
+                        ?>
+                        <!-- Work With Me CTA (mobile) -->
+                        <div class="mobile-wwm-cta">
+                            <a href="<?php echo esc_url( home_url( '/work-with-me/' ) ); ?>" class="btn btn-retro btn-orange w-100">
+                                🤝 Work With Me
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- end mobileNavDrawer -->
+
     </header>
 
    
