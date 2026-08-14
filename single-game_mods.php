@@ -49,7 +49,7 @@ wp_enqueue_style('arcade-hub-game-mods', get_template_directory_uri() . '/css/ga
                         
                             <!-- Mod Specs -->
                             <div class="card mb-4" style="background: #2a2a2a; border: 2px solid #ff8000;">
-                            <div class="card-header text-center" style="background: transparent; border-color: #ff8000;">
+                            <div class="card-header text-center" style="background: transparent; border-bottom: 2px solid #ff8000;">
                                 <h3 class="h5 mb-0" style="color: #ff8000;">🔧 Mod Info</h3>
                             </div>
                             <div class="card-body">
@@ -101,6 +101,19 @@ wp_enqueue_style('arcade-hub-game-mods', get_template_directory_uri() . '/css/ga
                                     </div>
                                 <?php endif; ?>
                             </div>
+                            </div>
+
+                            <div class="card mb-4" style="background: linear-gradient(135deg, #141414, #2b1a1a); border: 2px solid #ff8c42;">
+                                <div class="card-body text-center">
+                                    <h3 class="h5 mb-3" style="color: #ff8c42;">❤️ Support This Work</h3>
+                                    <p class="text-white mb-3 small" style="line-height: 1.6;">
+                                        I put a lot of time into testing, fixing, and sharing these mods for the community.
+                                        If this has helped you out, a small donation helps cover the time and effort behind it.
+                                    </p>
+                                    <a href="https://gofund.me/64b935baf" target="_blank" rel="noopener" class="btn btn-retro btn-orange w-100">
+                                        <i class="fas fa-heart me-2"></i> Support My Work
+                                    </a>
+                                </div>
                             </div>
                         
                             <!-- Load Order & Compatibility -->
@@ -215,7 +228,7 @@ wp_enqueue_style('arcade-hub-game-mods', get_template_directory_uri() . '/css/ga
                         <!-- Download Files -->
                         <?php if (!empty($mod_files)) : ?>
                             <div class="card mb-4" style="background: linear-gradient(135deg, #0a1a0a, #1a2a1a); border: 2px solid #00ff00;">
-                                <div class="card-header" style="background: transparent; border-color: #00ff00;">
+                                <div class="card-header" style="background: transparent; border-bottom: 2px solid #00ff00;">
                                     <h3 class="h5 mb-0" style="color: #00ff00;">📥 Download Files</h3>
                                 </div>
                                 <div class="card-body">
@@ -276,6 +289,27 @@ wp_enqueue_style('arcade-hub-game-mods', get_template_directory_uri() . '/css/ga
                                 </div>
                             </div>
                         <?php endif; ?>
+
+                        <!-- Donation & Affiliate Section -->
+                        <div class="card mb-4" style="background: linear-gradient(135deg, #0f1f1f, #122a2a); border: 2px solid #00f0ff;">
+                            <div class="card-header text-center" style="background: transparent; border-bottom: 2px solid #00f0ff;">
+                                <h3 class="h5 mb-0" style="color: #00f0ff;">💚 Support My Work</h3>
+                            </div>
+                            <div class="card-body text-center text-white">
+                                <p class="mb-3">
+                                    If you’ve enjoyed these mods and want to help fund the time, testing, and setup behind them, every donation helps keep this project alive.
+                                </p>
+                                <div class="d-flex flex-column flex-md-row justify-content-center gap-3">
+                                    <a href="https://gofund.me/64b935baf" target="_blank" rel="noopener sponsored" class="btn btn-retro btn-orange px-4">
+                                        <i class="fas fa-heart me-2"></i> Donate Here
+                                    </a>
+                                    <a href="#amazon-affiliate-picks" class="btn btn-retro btn-green px-4">
+                                        <i class="fab fa-amazon me-2"></i> Shop Affiliate Picks
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
                         <!-- Screenshots Gallery -->
                         <?php $gallery = get_post_gallery(get_the_ID(), false);
                         if (!empty($gallery['ids'])) :
@@ -302,6 +336,7 @@ wp_enqueue_style('arcade-hub-game-mods', get_template_directory_uri() . '/css/ga
                                     </div>
                             </section>
                         <?php endif; ?>
+                        
                     </div><!-- .mod-content -->
                 </div><!-- .row -->
                 
@@ -314,6 +349,18 @@ wp_enqueue_style('arcade-hub-game-mods', get_template_directory_uri() . '/css/ga
 
         <?php get_template_part('template-parts/comments'); ?>
         
+
+        <section class=donate-section>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <!-- Amazon Affiliate Picks -->
+                        <div id="amazon-affiliate-picks" class="mt-5">
+                            <?php get_template_part('partials/home-section-amazon-picks'); ?>
+                        </div>
+                </div>
+            </div>
+
         <!-- Related Mods -->
         <section class="arcade-section">
             <div class="container">
